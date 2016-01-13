@@ -15,7 +15,6 @@
         <link href="//cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="//static.bootcss.com/www/assets/css/site.min.css?v5" rel="stylesheet">
 
-
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
           <script src="/assets/js/html5shiv.min.js?v=f3008b4099"></script>
@@ -27,12 +26,8 @@
         <link rel="shortcut icon" href="//avalon-doc-bdda3.coding.io/favicon2.png">
         <link href="//avalon-doc-bdda3.coding.io/assets/css/docs.min.css" rel="stylesheet">
 
-
-
-        <script>
-        </script>
     </head>
-    <body class="home-template">
+    <body class="home-template" ms-controller="container">
 
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
@@ -43,7 +38,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand hidden-sm" data-toggle="iframe" href="#home.html" >avalon</a>
+                    <a class="navbar-brand hidden-sm" data-toggle="iframe" href="#!/" >avalon</a>
                 </div>
                 <div class="navbar-collapse collapse" role="navigation">
                     <ul class="nav navbar-nav">
@@ -62,8 +57,7 @@
             </div>
         </div>
 
-
-       <iframe src="home.html" frameborder=0 style="width:100%;height:100%;border:0 none" seamless="seamless"></iframe>
+        <div ms-view></div>
 
         <!-- /.container -->
         <div class="bs-docs-sidebar" ms-controller="nav">
@@ -94,57 +88,58 @@
         </style>
 
 
-        <script src="//files.cnblogs.com/files/rubylouvre/avalon.shim.js"></script>
+        <script src="./assets/js/avalon.js"></script>
+        <script src="./assets/js/index.js"></script>
         <script src="//cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
 
         <script>
-            $(function () {
-
-                parent.array = []
-                function hashChange() {
-                    var hash = location.hash.replace(/^#/, "")
-                    if (!hash || hash == "home.html") {
-                        $(".bs-docs-sidebar").hide()
-                        $("iframe").prop("src", "home.html")
-
-                    } else if (hash == "api.html") {
-                        $(".bs-docs-sidebar").hide()
-                        $("iframe").prop("src", "api.html")
-
-                    } else {
-
-                        $(".bs-docs-sidebar").show()
-                        if (/\.html/.test(hash)) {
-                            $("iframe").prop("src", hash)
-                        }
-                    }
-
-                }
-                $(window).on("hashchange", hashChange)
-                if(location.hash){
-                   hashChange()
-                }
-                
-                $("a[data-toggle='iframe']").click(function (e) {
-                    $('html,body').animate({scrollTop: 0}, 500)
-                })
-
-
-                function setLeft() {
-                    var iframe = $("iframe")[0]
-                    var idoc = iframe.contentDocument || idoc.contentWindow.document
-                    var main = $(".col-md-9", idoc)
-                    if (main.length) {
-                        var left = main.width() + main.offset().left
-                        $(".bs-docs-sidebar").css("left", left)
-                    }
-
-                }
-                setLeft()
-                $(window).on("resize", setLeft)
-
-
-            })
+            // $(function () {
+            //
+            //     parent.array = []
+            //     function hashChange() {
+            //         var hash = location.hash.replace(/^#/, "")
+            //         if (!hash || hash == "home.html") {
+            //             $(".bs-docs-sidebar").hide()
+            //             $("iframe").prop("src", "home.html")
+            //
+            //         } else if (hash == "api.html") {
+            //             $(".bs-docs-sidebar").hide()
+            //             $("iframe").prop("src", "api.html")
+            //
+            //         } else {
+            //
+            //             $(".bs-docs-sidebar").show()
+            //             if (/\.html/.test(hash)) {
+            //                 $("iframe").prop("src", hash)
+            //             }
+            //         }
+            //
+            //     }
+            //     $(window).on("hashchange", hashChange)
+            //     if(location.hash){
+            //        hashChange()
+            //     }
+            //
+            //     $("a[data-toggle='iframe']").click(function (e) {
+            //         $('html,body').animate({scrollTop: 0}, 500)
+            //     })
+            //
+            //
+            //     function setLeft() {
+            //         var iframe = $("iframe")[0]
+            //         var idoc = iframe.contentDocument || idoc.contentWindow.document
+            //         var main = $(".col-md-9", idoc)
+            //         if (main.length) {
+            //             var left = main.width() + main.offset().left
+            //             $(".bs-docs-sidebar").css("left", left)
+            //         }
+            //
+            //     }
+            //     setLeft()
+            //     $(window).on("resize", setLeft)
+            //
+            //
+            // })
         </script>
 
         <!-- 以下是 www.bootcss.com 网站所使用的统计代码，如果你使用本页面作为自己的模板，请将下面的统计代码删掉！！！ -->
