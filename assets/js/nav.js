@@ -7,8 +7,8 @@
         aname: "",
         bname: "",
         aclick: function (href, e) {
-            vm.aname = href
-            $('html,body').animate({scrollTop: 0}, 500)
+            // vm.aname = href
+            // $('html,body').animate({scrollTop: 0}, 500)
         },
         bclick: function (href, e) {
             vm.bname = href
@@ -30,7 +30,7 @@
         },
         array: [
             {
-                href: "tutorial/home/index.html",
+                href: "tutorial/home/",
                 name: "介绍",
                 sub: [
                     {
@@ -54,7 +54,7 @@
             },
 
             {
-                href: "tutorial/concepts/index.html",
+                href: "tutorial/concepts/",
                 name: "核心概念",
                 sub: [
                     {
@@ -92,7 +92,7 @@
                 ]
             },
             {
-                href: "tutorial/directives/index.html",
+                href: "tutorial/directives/",
                 name: "指令",
                 sub: [
                     {
@@ -190,7 +190,7 @@
                 ]
             },
             {
-                href: "tutorial/filters/index.html",
+                href: "tutorial/filters/",
                 name: "过滤器",
                 sub: [
                     {
@@ -236,7 +236,7 @@
                 ]
             },
             {
-                href: "tutorial/interceptors/index.html",
+                href: "tutorial/interceptors/",
                 name: "拦截器",
                 sub: [
                     {
@@ -258,7 +258,7 @@
                 ]
             },
             {
-                href: "tutorial/component/index.html",
+                href: "tutorial/component/",
                 name: "组件",
                 sub: [
                     {
@@ -292,15 +292,15 @@
                 ]
             },
             {
-                href: "tutorial/callbacks/index.html",
+                href: "tutorial/callbacks/",
                 name: "回调"
             },
             {
-                href: "tutorial/configuration/index.html",
+                href: "tutorial/configuration/",
                 name: "配置"
             },
             {
-                href: "tutorial/engineering/index.html",
+                href: "tutorial/engineering/",
                 name: "工程化",
                 sub:[
                   {

@@ -4,7 +4,7 @@
 //     debug: false
 // })
 
-require(["mmRouter/mmState"], function () {
+require(["mmRouter/mmState", "domReady!"], function () {
     var logos = [{
         src: "qunar.jpg",
         link: "http://www.qunar.com/"
@@ -110,12 +110,32 @@ require(["mmRouter/mmState"], function () {
         logos: logos
     })
 
+    var tutorial = avalon.define({
+        $id: "tutorial",
+        content: "",
+        $onRendered: function(state){
+            console.log(state.params.folder);
+            tutorial.content = "tutorial/" + state.params.folder + "/index.html"
+        }
+    })
+
     avalon.state("index", {
         url: "/",
         views: {
             "": {
                 templateUrl: "home.html",
                 controller: "home"
+            }
+        },
+        onEnter: function () {}
+    })
+
+    avalon.state("tutorial", {
+        url: "/tutorial/:folder/",
+        views: {
+            "": {
+                templateUrl: "tutorial.html",
+                controller: "tutorial"
             }
         },
         onEnter: function () {}

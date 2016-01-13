@@ -1,0 +1,28 @@
+<div ms-include-src="content"></div>
+
+<!-- /.container -->
+<div class="bs-docs-sidebar" ms-controller="nav">
+    <ul class="nav bs-docs-sidenav">
+        <li ms-repeat="array" ms-class="active: aname === el.href">
+            <a ms-attr-href="#!/{{el.href}}" ms-text="el.name" ms-click="aclick(el.href,$event)"></a>
+            <ul class="nav">
+                <li ms-repeat-elem="el.sub" ms-class="active: bname == elem.href">
+                    <a ms-attr-href="'#!/'+elem.href" ms-text="elem.name" ms-click="bclick(elem.href,$event)"></a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <a class="back-to-top" href="#top">
+        返回顶部
+    </a>
+</div>
+<style>
+    .bs-docs-sidebar{
+        position: fixed;
+        right: 40px;
+        top: 43px;
+        width: 200px;
+        padding-bottom: 10px;
+        background-color: #fff;
+    }
+</style>
