@@ -3,11 +3,16 @@
 <!-- /.container -->
 <div class="bs-docs-sidebar" ms-controller="nav">
     <ul class="nav bs-docs-sidenav">
-        <li ms-repeat="array" ms-class="active: aname === el.href">
-            <a ms-attr-href="#!/{{el.href}}" ms-text="el.name" ms-click="aclick(el.href,$event)"></a>
-            <ul class="nav">
+        <li ms-repeat="array" ms-class="active: currentName === el.name">
+            <a ms-attr-href="#!/{{el.href}}/index" ms-text="el.name" ms-click="aclick(el.href, el.sub, el.name)"></a>
+            <ul class="nav" ms-visible="currentName === el.name && el.sub">
                 <li ms-repeat-elem="el.sub" ms-class="active: bname == elem.href">
-                    <a ms-attr-href="'#!/'+elem.href" ms-text="elem.name" ms-click="bclick(elem.href,$event)"></a>
+                    <a ms-attr-href="#!/{{elem.href}}" ms-text="elem.name"></a>
+                </li>
+            </ul>
+            <ul class="nav" ms-visible="currentName === el.name && el.anchors">
+                <li ms-repeat-elem="el.anchors" ms-class="active: bname == elem.href">
+                    <a ms-attr-href="#!/{{el.href}}/index?anchor={{elem.href}}" ms-text="elem.name" ms-click="bclick($event, elem.href)"></a>
                 </li>
             </ul>
         </li>
